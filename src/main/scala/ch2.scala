@@ -22,4 +22,28 @@ object ch2 extends App {
     For example, the product of the characters  in "Hello" is 9415087488l
   */
 
+  var prod: Long  = 1
+  for ch <- "Hello" do prod *= ch.toLong
+
+  println(prod)
+
+
+  /*
+   8. Solve the preceding exercise without writing a loop. (Hint: look at the StringOps Scaladoc)
+   */
+  prod = 1
+  "Hello".foreach(prod *= _.toLong)
+  println(prod)
+
+  /*
+  9. Write a function product(s:String) that computes the product, as described in the preceding exercises.
+  */
+  def stringMult (s:String): Long = {
+    prod = 1
+    s.foreach(prod *= _.toLong)
+    prod
+  }
+
+  /* 10. Make the function of the preceding exercises a recursive function */
+
 }
