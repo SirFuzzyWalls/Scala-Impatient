@@ -45,5 +45,24 @@ object ch2 extends App {
   }
 
   /* 10. Make the function of the preceding exercises a recursive function */
+  def recStringMult (s:String): Long = {
+    if (s.isEmpty)
+      1
+
+    else
+      s.head.toLong * recStringMult(s.tail)
+  }
+
+
+  println(recStringMult("Hello"))
+
+  /* 11. Write a function that computes x^n, where n is an integer.
+        Use the following recursive definition:
+          x^n = y * y if n is even and positive, where y = x^(n/2).
+          x^n = x * x^(n-1) if n is odd and positive.
+          x^0 = 1
+          x^n = 1 / x^(-n) if n is negative.
+  */
+
 
 }
