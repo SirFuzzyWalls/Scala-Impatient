@@ -63,6 +63,13 @@ object ch2 extends App {
           x^0 = 1
           x^n = 1 / x^(-n) if n is negative.
   */
-
-
+  def pow (x:Int, n:Int): Double = {
+    if n == 0 then 1
+    else if n < 0 then 1 / pow(x, -n)
+    else if (n % 2 != 0) then x * pow(x, n-1)
+    else
+      val y = pow(x, n/2)
+      y * y
+  }
+  println(pow(5, 2))
 }
